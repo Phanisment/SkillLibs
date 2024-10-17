@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "skilllibs",
+	"version": "${version}",
+	"name": "Skill Libs",
+	"description": "Smaller part for make skill lot easier",
+	"authors": [
+		"Phanisment"
+	],
+	"contact": {
+		"homepage": "https://github.com/Phanisment",
+		"sources": "https://github.com/Phanisment/SkillLibs"
+	},
+	"license": "CC0-1.0",
+	"icon": "icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"phanisment.skill.lib.SkillLibs"
+		],
+		"fabric-datagen": [
+			"phanisment.skill.lib.SkillLibsDataGenerator"
+		]
+	},
+	"mixins": [
+		"skilllibs.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
