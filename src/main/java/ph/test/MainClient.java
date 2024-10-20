@@ -3,11 +3,7 @@ package ph.test;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.util.math.Vector3f;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.text.Text;
-import net.minecraft.util.math.Vec3d;
 
 public class MainClient implements ClientModInitializer {
 	@Override
