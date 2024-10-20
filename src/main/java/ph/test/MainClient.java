@@ -19,8 +19,8 @@ public class MainClient implements ClientModInitializer {
 	private void handleLeftClick(MinecraftClient client) {
 		if (client.mouse.wasLeftButtonClicked()) {
 			ClientPlayerEntity player = client.player;
-			if (player != null && !client.world.isClient) {
-				System.out.println("left click");
+			if (player != null) {
+				player.sendMessage(Text.literal("Klik kiri terdeteksi!"), true);
 			}
 		}
 	}
