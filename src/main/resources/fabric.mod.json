@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "skilllibs",
+	"id": "test",
 	"version": "${version}",
-	"name": "Skill Libs",
-	"description": "Smaller part for make skill lot easier",
+	"name": "Testing",
+	"description": "Testing!",
 	"authors": [
 		"Phanisment"
 	],
@@ -16,14 +16,14 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"phanisment.skill.lib.SkillLibs"
+			"ph.test.Main"
 		],
-		"fabric-datagen": [
-			"phanisment.skill.lib.SkillLibsDataGenerator"
+		"client": [
+			"ph.test.MainClient"
 		]
 	},
 	"mixins": [
-		"skilllibs.mixins.json"
+		"test.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",

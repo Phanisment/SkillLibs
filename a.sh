@@ -13,8 +13,8 @@ git commit -m "$commit_message"
 
 echo "Commited with message: $commit_message"
 
-read -p "Enter Branch Name (default: main): " branch_name
-branch_name=${branch_name:-main}
+read -p "Enter Branch Name (default: master): " branch_name
+branch_name=${branch_name:-master}
 
 git push origin "$branch_name"
 
