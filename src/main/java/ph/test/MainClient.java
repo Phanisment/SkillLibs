@@ -20,7 +20,7 @@ public class MainClient implements ClientModInitializer {
 		if (client.mouse.wasLeftButtonClicked()) {
 			ClientPlayerEntity player = client.player;
 			if (player != null && !client.world.isClient) {
-				player.sendMessage(Text.literal("Klik kiri!"), true);
+				System.out.println("left click")
 			}
 		}
 	}
