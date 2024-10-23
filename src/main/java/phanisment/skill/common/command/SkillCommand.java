@@ -1,5 +1,5 @@
 package phanisment.skill.common.command;
-/*
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -12,6 +12,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 import java.util.Collection;
+
+import phanisment.skill.util.SkillManager;
+import phanisment.skill.util.Skill;
 
 public class SkillCommand {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
@@ -37,9 +40,8 @@ public class SkillCommand {
 		}
 		for (PlayerEntity target : targets) {
 			target.sendMessage(Text.literal("Casting " + skillName + " on " + target.getName().getString()).formatted(Formatting.GREEN), false);
-			skill.cast();
+			skill.cast(target);
 		}
 		return 1;
 	}
 }
-*/
