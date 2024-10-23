@@ -22,7 +22,7 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	implementation group: "com.electronwill.night-config:toml:${project.night_config_version}"
+	implementation "com.electronwill.night-config:toml:${project.night_config_version}"
 }
 
 processResources {
