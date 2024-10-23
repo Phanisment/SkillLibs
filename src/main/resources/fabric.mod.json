@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "test",
+	"id": "skill_libs",
 	"version": "${version}",
-	"name": "Testing",
-	"description": "Testing!",
+	"name": "Skill Library",
+	"description": "Mod for creating custom skill!",
 	"authors": [
 		"Phanisment"
 	],
@@ -16,14 +16,11 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"ph.test.Main"
-		],
-		"client": [
-			"ph.test.MainClient"
+			"phanisment.skill.Main"
 		]
 	},
 	"mixins": [
-		"test.mixins.json"
+		"skill.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",
