@@ -15,7 +15,7 @@ public class Skills implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		SkillConfig.loadConfig(Paths.get("config/skill_modifiers.toml"));
+		SkillConfig.loadConfig(Path.get("config/skill_modifiers.toml"));
 		SkillConfig.close();
 	}
 }

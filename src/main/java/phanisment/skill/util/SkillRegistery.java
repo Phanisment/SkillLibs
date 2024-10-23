@@ -5,7 +5,7 @@ import java.util.Map;
 
 import phanisment.skill.lib.Skill;
 
-public class SkillRegistry {
+public class SkillRegistery {
 	private static final Map<String, Skill> skillRegistry = new HashMap<>();
 
 	public static void register(String name, Skill skill) {
