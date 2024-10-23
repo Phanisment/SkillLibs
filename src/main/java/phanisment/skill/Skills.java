@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import phanisment.skill.util.SkillConfig;
 
-import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Skills implements ModInitializer {
 	public static final String MOD_ID = "skill_libs";
@@ -15,7 +15,7 @@ public class Skills implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		SkillConfig.loadConfig(Path.get("config/skill_modifiers.toml"));
+		SkillConfig.loadConfig(Paths.get("config/skill_modifiers.toml"));
 		SkillConfig.close();
 	}
 }
