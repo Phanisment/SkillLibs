@@ -5,6 +5,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.command.argument.EntityArgumentType;
+import net.minecraft.command.argument.TextArgumentType;
 import net.minecraft.text.Text;
 
 import static net.minecraft.server.command.CommandManager.literal;
@@ -15,7 +16,7 @@ import phanisment.skill.lib.Skill;
 public class SkillCommand {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		dispatcher.register(literal("castSkill")
-			.then(CommandManager.argument("skill", StringArgumentType.string())
+			.then(CommandManager.argument("skill", TextArgumentType.text())
 			.then(CommandManager.argument("target", EntityArgumentType.entity())
 			.executes(context -> {
 				String skillName = StringArgumentType.getString(context, "skillName");
