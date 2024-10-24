@@ -14,15 +14,15 @@ import phanisment.skill.lib.Skill;
 
 public class SkillCommand {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-		dispatcher.register(literal("castSkill")
-			.then(CommandManager.argument("skill", StringArgumentType.string())
+		dispatcher.register(CommandManager.literal("castSkill")
+			.then(CommandManager.argument("skill", StringArgumentType.word())
 			.executes(context -> {
 				String skillName = StringArgumentType.getString(context, "skill");
 				Skill skill = SkillRegistery.getSkill(skillName);
 				PlayerEntity player = context.getSource().getPlayer();
 				if (skill != null) {
 					skill.cast(player);
-					context.getSource().sendFeedback(Text.literal("Casting " + skillName), false);
+					context.getSource().sendMessage(Text.literal("Casting " + skillName));
 				} else {
 					context.getSource().sendError(Text.literal("Skill not found!"));
 				}
