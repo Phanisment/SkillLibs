@@ -4,7 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.command.argument.EntityArgumentType
+import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.text.Text;
 
 import static net.minecraft.server.command.CommandManager.literal;
@@ -32,7 +32,7 @@ public class SkillCommand {
 					context.getSource().sendError(Text.of("Skill not found!"));
 				}
 				return 1;
-			}))
+			})))
 		);
 	}
 }
