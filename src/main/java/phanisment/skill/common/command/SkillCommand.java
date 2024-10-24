@@ -4,7 +4,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.command.argument.EntityArgumentType;
 import net.minecraft.command.argument.TextArgumentType;
 import net.minecraft.text.Text;
 
@@ -17,23 +16,18 @@ public class SkillCommand {
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
 		dispatcher.register(literal("castSkill")
 			.then(CommandManager.argument("skill", TextArgumentType.text())
-			.then(CommandManager.argument("target", EntityArgumentType.entity())
 			.executes(context -> {
-				String skillName = StringArgumentType.getString(context, "skillName");
-				Skill skill = SkillManager.getSkill(skillName);
+				String skillName = TextArgumentType.getTextArgument(context, "skill");
+				Skill skill = SkillRegistery.getSkill(skillName);
 				PlayerEntity player = context.getSource().getPlayer();
 				if (skill != null) {
-					if (player != null) {
-						skill.cast();
-						context.getSource().sendFeedback(Text.of("Casting " + skillName), false);
-					} else {
-						context.getSource().sendError(Text.of("Target not found!"));
-					}
+					skill.cast(player);
+					context.getSource().sendFeedback(Text.of("Casting " + skillName), false);
 				} else {
 					context.getSource().sendError(Text.of("Skill not found!"));
 				}
 				return 1;
-			})))
+			}))
 		);
 	}
 }
