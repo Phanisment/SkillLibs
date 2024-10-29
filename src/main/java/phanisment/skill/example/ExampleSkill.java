@@ -18,7 +18,7 @@ public class ExampleSkill implements Skill {
 
 	@Override
 	public void cast(PlayerEntity player) {
-		player.sendMessage(Text.literal("Cast Skill"))
+		player.sendMessage(Text.literal("Cast Skill"));
 	}
 
 	@Override
