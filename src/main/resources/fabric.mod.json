@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"phanisment.skill.Main"
+			"phanisment.skill.Skills"
 		]
 	},
 	"mixins": [
