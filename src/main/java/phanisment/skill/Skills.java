@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 import phanisment.skill.example.ExampleSkill;
 import phanisment.skill.common.command.SkillCommand;
+import phanisment.skill.lib.Delay;
 
 public class Skills implements ModInitializer {
 	public static final String MOD_ID = "skill_libs";
@@ -21,5 +22,7 @@ public class Skills implements ModInitializer {
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			SkillCommand.register(dispatcher);
 		});
+		
+		Delay.register();
 	}
 }

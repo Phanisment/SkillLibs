@@ -15,4 +15,8 @@ public class SkillRegistery {
 	public static Skill getSkill(String name) {
 		return skillRegistry.get(name);
 	}
+	
+	public static Map<String, Skill> getSkill() {
+		return skillRegistry;
+	}
 }
