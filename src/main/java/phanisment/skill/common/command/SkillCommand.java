@@ -26,20 +26,17 @@ public class SkillCommand {
 	};
 
 	public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-		dispatcher.register(CommandManager.literal("castSkill")
-			.then(CommandManager.argument("Skill", StringArgumentType.word()).suggests(SKILL_SUGGESTIONS)
-			.executes(context -> {
-				String skillName = StringArgumentType.getString(context, "Skill");
-				Skill skill = SkillRegistery.getSkill(skillName);
-				PlayerEntity target = context.getSource().getPlayer();
-				if (skill != null) {
-					skill.cast(target);
-					context.getSource().sendMessage(Text.literal("Casting [" + skillName + "]");
-				} else {
-					context.getSource().sendMessage(Text.literal("Skill not found!").formatted(Formatting.RED));
-				}
-				return 1;
-			}))
-		);
+		dispatcher.register(CommandManager.literal("castSkill").then(CommandManager.argument("Skill", StringArgumentType.word()).suggests(SKILL_SUGGESTIONS).executes(context -> {
+			String skillName = StringArgumentType.getString(context, "Skill");
+			Skill skill = SkillRegistery.getSkill(skillName);
+			PlayerEntity target = context.getSource().getPlayer();
+			if (skill != null) {
+				skill.cast(target);
+				context.getSource().sendMessage(Text.literal("Casting [" + skillName + "]"));
+			} else {
+				context.getSource().sendMessage(Text.literal("Skill not found!").formatted(Formatting.RED));
+			}
+			return 1;
+		})));
 	}
 }
