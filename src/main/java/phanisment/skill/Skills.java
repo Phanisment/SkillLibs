@@ -18,7 +18,7 @@ public class Skills implements ModInitializer {
 	public void onInitialize() {
 		ExampleSkill.register();
 		
-		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
 			SkillCommand.register(dispatcher);
 		});
 	}
