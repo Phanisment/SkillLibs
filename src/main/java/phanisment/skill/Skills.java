@@ -5,10 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import phanisment.skill.util.SkillConfig;
 import phanisment.skill.example.ExampleSkill;
-
-import java.nio.file.Paths;
 
 public class Skills implements ModInitializer {
 	public static final String MOD_ID = "skill_libs";
@@ -16,9 +13,6 @@ public class Skills implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		SkillConfig.loadConfig(Paths.get("config/skill_modifiers.toml"));
-		SkillConfig.close();
-		
 		ExampleSkill.register();
 	}
 }
